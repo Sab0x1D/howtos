@@ -59,8 +59,10 @@ Edit `/etc/fstab\` and add:
 When VMware does not expose shared folders, force-enable them by editing the VM configuration:
 
 1. **Shut down the Ubuntu VM.**  
-2. Open the VM’s `.vmx` file (located under `~/Documents/Virtual Machines.localized/YourVM.vmwarevm/YourVM.vmx` on macOS).  
-3. Add the following lines at the end:
+2. Open the VM’s `.vmx` file:  
+   on macOS located under `~/Documents/Virtual Machines.localized/YourVM.vmwarevm/YourVM.vmx`.  
+   on Windows located under `C:\Users\<your_username>\Virtual Machines\<YourVM_name>\YourVM_name.vmx`.  
+4. Add the following lines at the end:
 
 ```ini
 isolation.tools.hgfsServerSet.disable = "FALSE"
