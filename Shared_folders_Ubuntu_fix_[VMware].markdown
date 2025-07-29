@@ -16,45 +16,45 @@ It covers both the **FUSE-based mount method** and the **`.vmx` configuration fi
 ## 2. Standard Fix (Working Solution)
 
 ### Step 1 – Install Required Tools
-\`\`\`bash
+```bash
 sudo apt update
 sudo apt install -y open-vm-tools open-vm-tools-desktop
-\`\`\`
+```
 
 ---
 
 ### Step 2 – Create Mount Point
-\`\`\`bash
+```bash
 sudo mkdir -p /mnt/hgfs
-\`\`\`
+```
 
 ---
 
 ### Step 3 – Mount Shared Folder Using FUSE
-\`\`\`bash
+```bash
 sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
-\`\`\`
+```
 
 ---
 
 ### Step 4 – Verify
-\`\`\`bash
+```bash
 ls -la /mnt/hgfs
-\`\`\`
+```
 You should see your shared folder (e.g., `vpn-gateway-manager`) listed.
 
 ---
 
 ## 3. Auto-Mount on Boot (Optional)
 
-Edit \`/etc/fstab\` and add:
-\`\`\`
+Edit `/etc/fstab\` and add:
+```bash
 .host:/    /mnt/hgfs    fuse.vmhgfs-fuse    allow_other    0    0
-\`\`\`
+```
 
 ---
 
-## ⚠4. If Mount Still Fails – Edit the `.vmx` File
+## 4. If Mount Still Fails – Edit the `.vmx` File
 
 When VMware does not expose shared folders, force-enable them by editing the VM configuration:
 
@@ -62,7 +62,7 @@ When VMware does not expose shared folders, force-enable them by editing the VM 
 2. Open the VM’s `.vmx` file (located under `~/Documents/Virtual Machines.localized/YourVM.vmwarevm/YourVM.vmx` on macOS).  
 3. Add the following lines at the end:
 
-\`\`\`ini
+```ini
 isolation.tools.hgfsServerSet.disable = "FALSE"
 isolation.tools.hgfs.disable = "FALSE"
 sharedFolder.maxNum = "3"
@@ -70,28 +70,28 @@ sharedFolder0.enabled = "TRUE"
 sharedFolder0.readAccess = "TRUE"
 sharedFolder0.writeAccess = "TRUE"
 sharedFolder0.autoMount = "TRUE"
-sharedFolder0.hostPath = "/Users/youruser/path/to/vpn-gateway-manager"
-sharedFolder0.guestName = "vpn-gateway-manager"
+sharedFolder0.hostPath = "/Users/youruser/path/to/yourfoldername"
+sharedFolder0.guestName = "yourfoldername"
 sharedFolder0.expiration = "never"
-\`\`\`
+```
 
-> Replace `/Users/youruser/path/to/vpn-gateway-manager` with the actual folder path on your host.
+> Replace `/Users/youruser/path/to/yourfoldername` with the actual folder path on your host.
 
 4. Save the file and restart the VM.  
 5. Remount using the same FUSE command:
 
-\`\`\`bash
+```bash
 sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
-\`\`\`
+```
 
 ---
 
 ## 5. Quick Remount Command
 
 For future boots, you can quickly re-mount the shared folder with:
-\`\`\`bash
+```bash
 sudo mkdir -p /mnt/hgfs && sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other && ls -la /mnt/hgfs
-\`\`\`
+```
 
 ---
 
