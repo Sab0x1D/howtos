@@ -1,9 +1,27 @@
-# Snort 101 & Command Cheatsheet
+```
+███████╗███╗   ██╗ ██████╗ ██████╗ ████████╗
+██╔════╝████╗  ██║██╔═══██╗██╔══██╗╚══██╔══╝
+███████╗██╔██╗ ██║██║   ██║██████╔╝   ██║   
+╚════██║██║╚██╗██║██║   ██║██╔══██╗   ██║   
+███████║██║ ╚████║╚██████╔╝██║  ██║   ██║   
+╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+Snort 101 & Command Cheatsheet
+```
 
-Snort is a powerful **Network Intrusion Detection/Prevention System (NIDS/NIPS)** that can:
-- Sniff traffic in real-time
-- Log packets for analysis
-- Detect & prevent attacks with custom rules
+**Snort** is an open-source **Network Intrusion Detection and Prevention System (NIDS/NIPS)** developed by Cisco.  
+It is widely used by security professionals for:
+
+- **Packet sniffing** – capturing and analyzing live network traffic  
+- **Logging** – recording packets for later investigation  
+- **Intrusion detection** – identifying suspicious activities based on signatures and rules  
+- **Intrusion prevention** – actively blocking detected threats (when configured as IPS)
+
+Snort operates in **three primary modes**:
+1. **Sniffer Mode** – Displays packet data on the console.  
+2. **Packet Logger Mode** – Logs packets to disk for analysis.  
+3. **Network IDS/IPS Mode** – Detects or blocks malicious activity using predefined or custom rules.
+
+With its flexible rule language and extensive community support, Snort remains a cornerstone tool in network defense, penetration testing, and security monitoring.
 
 ---
 
