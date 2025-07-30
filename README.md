@@ -6,11 +6,11 @@ This repo serves as a **centralized knowledge base** containing:
 - **Cheatsheets** – Quick reference material for commands, tools, and techniques  
 
 ## Repository Structure
-```
-howtos/         # Detailed troubleshooting and setup guides
-tutorials/      # Learning materials & step-by-step tutorials
-cheatsheets/    # Command references and tool usage cheatsheets
-```
+| Folder                                                              | Description                                                     |
+|---------------------------------------------------------------------|-----------------------------------------------------------------|
+| [`howtos/`](https://github.com/sab0x1d/howtos/howtos)               | Detailed troubleshooting and setup guides                       |  
+| [`tutorials/`](https://github.com/sab0x1d/howtos/tutorials)         | Learning materials & step-by-step tutorials                     |  
+| [`cheatsheets/`](https://github.com/sab0x1d/howtos/cheatsheets)     | Command references and tool usage cheatsheets                   |  
 
 ## Contributions
 Contributions are welcome!  
