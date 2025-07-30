@@ -8,9 +8,9 @@ This repo serves as a **centralized knowledge base** containing:
 ## Repository Structure
 | Folder                                                              | Description                                                     |
 |---------------------------------------------------------------------|-----------------------------------------------------------------|
-| [`howtos/`](https://github.com/sab0x1d/howtos/howtos)               | Detailed troubleshooting and setup guides                       |  
-| [`tutorials/`](https://github.com/sab0x1d/howtos/tutorials)         | Learning materials & step-by-step tutorials                     |  
-| [`cheatsheets/`](https://github.com/sab0x1d/howtos/cheatsheets)     | Command references and tool usage cheatsheets                   |  
+| [`howtos`](https://github.com/Sab0x1D/howtos/tree/main/howtos)               | Detailed troubleshooting and setup guides                       |  
+| [`tutorials`](https://github.com/sab0x1d/howtos/tree/main/tutorials)         | Learning materials & step-by-step tutorials                     |  
+| [`cheatsheets`](https://github.com/sab0x1d/howtos/tree/main/cheatsheets)     | Command references and tool usage cheatsheets                   |  
 
 ## Contributions
 Contributions are welcome!  
