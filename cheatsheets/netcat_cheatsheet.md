@@ -164,6 +164,3 @@ nc 192.168.59.3 8888
 | `-x`   | Use proxy |
 
 ---
-
-## Reference
-**sysxplore.com**  
